@@ -1,0 +1,18 @@
+<h1>Log in</h1>
+
+<div class="row">
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: login_path) do |f| %>
+      <%= f.label :email %>
+      <%= f.email_field :email, value: @user&.email, class: 'form-control' %>
+      <% if @user.present? %>
+        <%= f.label :otp %>
+        <%= f.text_field :otp, class: 'form-control' %>
+      <% end %>
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
