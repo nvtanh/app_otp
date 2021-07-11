@@ -1,0 +1,9 @@
+<tr>
+  <th><%= beneficiary_counter + 1 %></th>
+  <td><%= beneficiary.nick_name %></td>
+  <td><%= beneficiary.bank_account_number %></td>
+  <td>
+    <%= link_to "Tranfer", new_dashboard_beneficiary_transaction_path(beneficiary) %> |
+    <%= link_to "History", dashboard_beneficiary_path(beneficiary) %>
+  </td>
+</tr>

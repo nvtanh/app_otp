@@ -215,6 +215,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    select2-rails (4.0.13)
     shoulda-matchers (4.5.1)
       activesupport (>= 4.2.0)
     sidekiq (6.2.1)
@@ -285,6 +286,7 @@ DEPENDENCIES
   rubocop-rails
   sass-rails (~> 5.0)
   sassc-rails (>= 2.1.0)
+  select2-rails
   shoulda-matchers (~> 4.5, >= 4.5.1)
   sidekiq
   spring

@@ -1,0 +1,28 @@
+<div class="row">
+  <%= link_to "Back", dashboard_beneficiaries_path, class: "btn btn-default" %>
+</div>
+</br>
+
+<h1>New tranfer</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for([:dashboard, @beneficiary, @transaction]) do |f| %>
+      <%= f.label :beneficiary_id %>
+      <%= f.text_field :beneficiary_id,
+        value: "#{@beneficiary.bank_name} - #{@beneficiary.bank_account_number}",
+        class: 'form-control', disabled: true
+      %>
+
+      <%= f.label :sender_account_id %>
+      <%= f.select :sender_account_id,
+        options_for_select(@sender_accounts.map {|acc| ["Account number: #{acc.account_number} (Amount: #{acc.amount}$)", acc.id]}),
+        class: 'form-control', id: "select-sender-account" %>
+
+      <%= f.label :amount %>
+      <%= f.number_field :amount, step: :any, class: 'form-control' %>
+
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

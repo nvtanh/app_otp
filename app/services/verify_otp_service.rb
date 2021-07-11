@@ -4,7 +4,7 @@ class VerifyOtpService
     @input_otp = input_otp
   end
 
-  def excute!
+  def call
     err_message = ""
     is_verified = correct_otp?
     if is_verified

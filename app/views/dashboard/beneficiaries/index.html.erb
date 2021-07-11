@@ -1,0 +1,19 @@
+<div class="row">
+  <%= link_to "Create new beneficiary", new_dashboard_beneficiary_path, class: "btn btn-primary" %>
+</div>
+</br>
+<div class="row">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Nickname</th>
+        <th>Account Number</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render(partial: "beneficiary", collection: @beneficiaries) %>
+    </tbody>
+  </table>
+</div>

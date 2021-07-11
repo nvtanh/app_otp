@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     if verify_otp_step?
-      is_verified, errors = VerifyOtpService.new(@user, session_params[:otp]).excute!
+      is_verified, errors = VerifyOtpService.new(@user, session_params[:otp]).call
       if is_verified
         log_in @user
         flash[:notice] = "Welcome to OTP"

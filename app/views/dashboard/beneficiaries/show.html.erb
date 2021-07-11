@@ -1,0 +1,24 @@
+<div class="row">
+  <%= link_to "Back", dashboard_beneficiaries_path, class: "btn btn-default" %>
+</div>
+
+</br>
+
+<h1><%= @beneficiary.nick_name %> transaction history</h1>
+
+<div class="row">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Sender Account Number</th>
+        <th>Receiver Account Number</th>
+        <th>Amount</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render(partial: "transaction", collection: @transactions) %>
+    </tbody>
+  </table>
+</div>

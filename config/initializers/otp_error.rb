@@ -1,0 +1,2 @@
+class OtpError < StandardError
+end
