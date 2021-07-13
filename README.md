@@ -3,12 +3,16 @@
 * Ruby version `2.7.2`
 
 * How to run app
+1. Install some libs dependences
+  ```
+    bundle install
+  ```
 
-1. Setup DB and seed data
+2. Setup DB and seed data
   ```
     bundle exec rails db:drop db:create db:migrate db:seed
   ```
-2. Setup environment variables
+3. Setup environment variables
   ```
     cp config/application.yml.sample config/application.yml
   ```
@@ -23,7 +27,7 @@
       ```
       Go to http://127.0.0.1:1080/ to check mail box.
 
-3. Run server
+4. Run server
   ```ruby
     bundle exec rails s
   ```
