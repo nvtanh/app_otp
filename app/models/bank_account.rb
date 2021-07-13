@@ -2,7 +2,10 @@ class BankAccount < ApplicationRecord
   belongs_to :user
 
   validates :amount, presence: true,
-    numericality: { only_float: true, greater_than: 0 }
+    numericality: {
+      only_float: true, greater_than: 0,
+      message: I18n.t('errors.bank_accounts.amount.not_enough')
+    }
 
   def deposit!(deposit_amount)
     raise OtpError.new(I18n.t('errors.bank_accounts.deposit_amount_invalid')) unless deposit_amount.positive?

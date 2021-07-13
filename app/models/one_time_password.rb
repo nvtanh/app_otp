@@ -34,6 +34,10 @@ class OneTimePassword < ApplicationRecord
   end
 
   def send_otp
-    UserMailer.send_otp(self.user_email, self.otp).deliver_later
+    ###
+    # Because test so I use deliver_now method to send mail immediately instead of enqueuing it,
+    # we'll change it to deliver_later in real environment
+    ###
+    UserMailer.send_otp(self.user_email, self.otp).deliver_now
   end
 end

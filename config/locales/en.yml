@@ -3,3 +3,5 @@ en:
     bank_accounts:
       deposit_amount_invalid: 'amount must greater than zero'
       withdrawal_amount_invalid: 'amount must greater than zero'
+      amount:
+        not_enough: 'is not enough'
