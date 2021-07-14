@@ -33,3 +33,4 @@
   ```
 
   Go to app at http://localhost:3000
+  Login by email with format: `test_#{i}@example.com` with `i` is number from 0 to 9
